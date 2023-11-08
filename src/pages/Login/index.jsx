@@ -8,6 +8,8 @@ import { AuthContext } from "../../providers/AuthProvider";
 import styles from "./styles.module.scss";
 import { schema } from "./validator";
 
+import logo from "../../assets/logoSF.png";
+
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,11 +29,11 @@ export const Login = () => {
       <div className={styles.container}>
         <div className={styles.containerLogin}>
           <div className={styles.wrapLogin}>
-          <img
-            className={styles.selectionImg}
-            src="./src/assets/logoSF.png"
-            alt="Logo Carro Limpo"
-          />
+            <img
+              className={styles.selectionImg}
+              src={logo}
+              alt="Logo Carro Limpo"
+            />
             <span className={styles.loginFormTitle}>Bem Vindo!</span>
             <span className={styles.loginFormTitle}></span>
 
@@ -81,11 +83,12 @@ export const Login = () => {
                 Criar conta
               </a>
             </div>
-            <p className={styles.footer}>Tiraupp Sistemas - Todos direitos reservados</p>
+            <p className={styles.footer}>
+              Tiraupp Sistemas - Todos direitos reservados
+            </p>
           </div>
         </div>
       </div>
-      
     </form>
   );
 };
