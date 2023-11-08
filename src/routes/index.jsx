@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import { Home } from "../pages/Home";
 import { Info } from "../pages/Info";
-import { Register } from "../pages/Register";
+import { RegisterClient } from "../pages/RegisterClient";
 import { Selection } from "../pages/Selection";
 
 import { ProtectedRoutes } from "../components/ProtectedRoutes";
@@ -14,7 +14,7 @@ export const RoutesMain = () => {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/selection" element={<Selection />} />
-      <Route path="/register" element={<Register />} />
+      <Route path="/registerclient" element={<RegisterClient />} />
 
       <Route element={<ProtectedRoutes />}>
         <Route path="/home" element={<Home />}></Route>

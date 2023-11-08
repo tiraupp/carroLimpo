@@ -1,10 +1,20 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
+
 import styles from "./styles.module.scss";
 import { schema } from "./validator";
+import { unstable_HistoryRouter } from "react-router-dom";
 
 export const Selection = () => {
+
+
+    const history = unstable_HistoryRouter();
+  
+    const handleNavegarRegisterClient = () => {
+      history.push("/registerclient"); 
+    };
+
   const {
     formState: { errors, isSubmitting },
   } = useForm({
@@ -23,20 +33,12 @@ export const Selection = () => {
             Selecione a opção e Cadastre-se!
           </span>
           <div className={styles.containerselectionBtn}>
-            <button
-              className={styles.selectionBtn}
-              type="submit"
-              disabled={isSubmitting}
-            >
-              Quero ser cliente
+          <button onClick={handleNavegarRegisterClient()} className={styles.selectionBtn}>
+              Quero ser cliente 
             </button>
-            <button
-              className={styles.selectionBtn}
-              type="submit"
-              disabled={isSubmitting}
-            >
-              Tenho uma lavação
-            </button>
+            
+
+            <button className={styles.selectionBtn}>Tenho uma lavação</button>
           </div>
 
           <span className={styles.textCenter}>Já possui conta?</span>

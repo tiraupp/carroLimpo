@@ -4,11 +4,9 @@ import { AuthProvider } from "./providers/AuthProvider";
 import { RoutesMain } from "./routes";
 import { Global } from "./styles/GlobalStyle";
 
-
 function App() {
   return (
     <>
-
       <ToastContainer />
       <Global />
       <AuthProvider>
