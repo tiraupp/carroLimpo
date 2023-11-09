@@ -1,6 +1,6 @@
 {
   "name": "carro-limpo",
-  "homepage": "https://carro-limpo.vercel.app/",
+  "homepage": "https://carro-limpo.vercel.app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
