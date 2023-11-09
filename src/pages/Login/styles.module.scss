@@ -22,7 +22,7 @@
 
   padding: 15px;
 
-  background-image: url("./src/assets/backGround.jpeg");
+  background-image: var(--background-image-url);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

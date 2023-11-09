@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import backGround from "../assets/backGround.jpeg";
 
 export const Global = createGlobalStyle`
  :root {
@@ -16,6 +17,8 @@ export const Global = createGlobalStyle`
     --color-warning: #FBEA85;
     --color-error: #EA524F;
 
+    --background-image-url: url(${backGround});
+    
     font-size: 60%;   
   }
 
@@ -67,7 +70,6 @@ export const Global = createGlobalStyle`
     color: var(--color-secondary);;
   }
 `;
-
 
 // 1rem 16px => 100%
 // 1rem 10px => 62.5%
