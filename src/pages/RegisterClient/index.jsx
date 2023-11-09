@@ -1,7 +1,7 @@
 export const RegisterClient = () => {
   return (
     <main>
-      <p>Teste Registro</p>
+      <p>Teste Registro Cliente</p>
     </main>
   );
 };

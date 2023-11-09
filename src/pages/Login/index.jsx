@@ -3,12 +3,11 @@ import { useForm } from "react-hook-form";
 
 import { useContext, useState } from "react";
 
+import { ImgLogo } from "../../components/ImgLogo";
 import { Input } from "../../components/Input";
 import { AuthContext } from "../../providers/AuthProvider";
 import styles from "./styles.module.scss";
 import { schema } from "./validator";
-
-import logo from "../../assets/logoSF.png";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -29,11 +28,7 @@ export const Login = () => {
       <div className={styles.container}>
         <div className={styles.containerLogin}>
           <div className={styles.wrapLogin}>
-            <img
-              className={styles.selectionImg}
-              src={logo}
-              alt="Logo Carro Limpo"
-            />
+            <ImgLogo></ImgLogo>
             <span className={styles.loginFormTitle}>Bem Vindo!</span>
             <span className={styles.loginFormTitle}></span>
 

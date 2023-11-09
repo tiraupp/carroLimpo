@@ -2,7 +2,8 @@ import { Route, Routes } from "react-router-dom";
 
 import { Home } from "../pages/Home";
 import { Info } from "../pages/Info";
-import { RegisterClient } from "../pages/RegisterClient";
+import { RegisterClient} from "../pages/RegisterClient";
+import { RegisterProfessional } from "../pages/RegisterProfessional";
 import { Selection } from "../pages/Selection";
 
 import { ProtectedRoutes } from "../components/ProtectedRoutes";
@@ -15,6 +16,7 @@ export const RoutesMain = () => {
       <Route path="/" element={<Login />} />
       <Route path="/selection" element={<Selection />} />
       <Route path="/registerclient" element={<RegisterClient />} />
+      <Route path="/registerprofessional" element={<RegisterProfessional />} />
 
       <Route element={<ProtectedRoutes />}>
         <Route path="/home" element={<Home />}></Route>
