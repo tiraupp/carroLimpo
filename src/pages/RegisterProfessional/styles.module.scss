@@ -214,8 +214,7 @@ select {
 
 @media screen and (max-width: 769px) {
   .wrapRegister {
-    display: flex;
-    flex-direction: column;
+    width: 90%;
   }
   .editRegister {
     display: flex;
