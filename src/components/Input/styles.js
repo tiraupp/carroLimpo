@@ -9,10 +9,6 @@ export const Container = styled.div`
     margin-top: 2rem;
   }
 
-  label {
-    color: var(--color-secondary);
-  }
-
   input {
     font-size: 15px;
     color: #fff;
@@ -38,13 +34,6 @@ export const Container = styled.div`
       width: 100%;
     }
   }
-  p {
-    color: var(--color-error);
-    font-size: 1.4rem;
-
-    margin-top: 1px;
-    margin-bottom: 6px;
-  }
 
   .focusInput {
     position: absolute;
@@ -56,7 +45,7 @@ export const Container = styled.div`
     left: 0;
 
     pointer-events: none;
-    color: #adadad;
+    color: var(--color-text-gray);
   }
   .focusInput {
     &:before {

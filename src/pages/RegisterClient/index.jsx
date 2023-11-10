@@ -41,7 +41,7 @@ export const RegisterClient = () => {
                 {...register("name")}
                 onChange={(e) => setName(e.target.value)}
                 spanClassName="focusInput"
-                dataPlaceholder={name !== "" ? "Nome" : "Digite seu nome."}
+                dataPlaceholder={name !== "" ? "Nome" : "Digite seu nome"}
               />
             </div>
 
@@ -54,7 +54,7 @@ export const RegisterClient = () => {
                 {...register("email")}
                 onChange={(e) => setEmail(e.target.value)}
                 spanClassName="focusInput"
-                dataPlaceholder={email !== "" ? "Email" : "Digite seu email."}
+                dataPlaceholder={email !== "" ? "Email" : "Digite seu email"}
               />
             </div>
 
@@ -67,7 +67,7 @@ export const RegisterClient = () => {
                 {...register("phone")}
                 onChange={(e) => setPhone(e.target.value)}
                 spanClassName="focusInput"
-                dataPlaceholder={phone !== "" ? "Nº Celular" : "Digite o Nº Celular."}
+                dataPlaceholder={phone !== "" ? "Nº Celular" : "Digite o Nº Celular"}
               />
             </div>
 
@@ -81,7 +81,7 @@ export const RegisterClient = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 spanClassName="focusInput"
                 dataPlaceholder={
-                  password !== "" ? "Senha" : "Digite sua senha."
+                  password !== "" ? "Senha" : "Digite sua senha"
                 }
               />
             </div>
@@ -96,7 +96,7 @@ export const RegisterClient = () => {
                 onChange={(e) => setConfirm(e.target.value)}
                 spanClassName="focusInput"
                 dataPlaceholder={
-                  confirm !== "" ? "Confirme sua senha" : "Digite novamente sua senha."
+                  confirm !== "" ? "Confirme sua senha" : "Digite novamente sua senha"
                 }
               />
             </div>

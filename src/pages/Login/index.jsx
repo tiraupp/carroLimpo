@@ -42,7 +42,7 @@ export const Login = () => {
                 {...register("email")}
                 onChange={(e) => setEmail(e.target.value)}
                 spanClassName="focusInput"
-                dataPlaceholder={email !== "" ? "Email" : "Digite seu email."}
+                dataPlaceholder={email !== "" ? "Email" : "Digite seu email"}
               />
             </div>
 
@@ -57,7 +57,7 @@ export const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 spanClassName="focusInput"
                 dataPlaceholder={
-                  password !== "" ? "Senha" : "Digite sua senha."
+                  password !== "" ? "Senha" : "Digite sua senha"
                 }
               />
             </div>
