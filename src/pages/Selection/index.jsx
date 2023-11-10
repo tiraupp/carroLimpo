@@ -9,7 +9,7 @@ import { schema } from "./validator";
 
 export const Selection = () => {
   const {
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm({
     resolver: zodResolver(schema),
   });
@@ -26,7 +26,7 @@ export const Selection = () => {
     <div className={styles.container}>
       <div className={styles.containerSelection}>
         <div className={styles.wrapSelection}>
-          <ImgLogo/>
+          <ImgLogo />
           <span className={styles.selectionTitle}>
             Selecione a opção e Cadastre-se!
           </span>
@@ -37,14 +37,12 @@ export const Selection = () => {
             <Link to="/registerprofessional" className={styles.link}>
               <button className={styles.selectionBtn}>Tenho uma lavação</button>
             </Link>
+            <span className={styles.textCenter}>Já possui conta?</span>
+            <Link to="/" className={styles.link}>
+              <button className={styles.btnLogin}>Fazer Login</button>
+            </Link>
           </div>
 
-          <span className={styles.textCenter}>Já possui conta?</span>
-          <Link to="/" className={styles.link}>
-            <button className={styles.btnLogin} disabled={isSubmitting}>
-              Fazer Login
-            </button>
-          </Link>
           <p className={styles.footer}>
             Tiraupp Sistemas - Todos direitos reservados
           </p>

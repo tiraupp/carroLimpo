@@ -12,7 +12,7 @@
 }
 
 .containerLogin {
-  width: 100;
+
   min-height: 100vh;
 
   display: flex;
@@ -30,8 +30,13 @@
 .loginForm {
   width: 100%;
 }
+
 .wrapLogin {
-  width: 45rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #333;
   border-radius: 10px;
 
@@ -51,19 +56,17 @@
   text-align: center;
 }
 
-
 .wrapInput {
-  width: 100%;
+  width: 70%;
   position: relative;
   border-bottom: 2px solid #adadad;
   margin-bottom: 37px;
 }
-
-.containerLoginFormBtn {
+.containerLoginFormBtn{
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 13px;
+  align-items: center;
 }
 
 .loginFormBtn {
@@ -77,14 +80,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  width: 100%;
+width: 70%;
   height: 6rem;
 
-  background: -webkit-linear-gradient(to left, var(--color-button-primary), var(--color-button-secondary));
-  background: -o-linear-gradient(to left, var(--color-button-primary), var(--color-button-secondary));
-  background: -moz-linear-gradient(to left, var(--color-button-primary), var(--color-button-secondary));
-  background: linear-gradient(to left, var(--color-button-primary), var(--color-button-secondary));
+  background: -webkit-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: -o-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: -moz-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
 }
 
 .loginForm-btn {
@@ -98,7 +116,6 @@
   cursor: not-allowed;
   display: inline-block;
 }
-
 
 .textCenter {
   display: flex;
@@ -134,4 +151,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 769px) {
+  .wrapLogin {
+    width: 100%;
+  }
 }

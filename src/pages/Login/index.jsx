@@ -28,10 +28,8 @@ export const Login = () => {
       <div className={styles.container}>
         <div className={styles.containerLogin}>
           <div className={styles.wrapLogin}>
-            <ImgLogo></ImgLogo>
+            <ImgLogo />
             <span className={styles.loginFormTitle}>Bem Vindo!</span>
-            <span className={styles.loginFormTitle}></span>
-
             <div className={styles.wrapInput}>
               <Input
                 className={email !== "" ? `has-val styles.input` : "input"}
@@ -56,9 +54,7 @@ export const Login = () => {
                 {...register("senha")}
                 onChange={(e) => setPassword(e.target.value)}
                 spanClassName="focusInput"
-                dataPlaceholder={
-                  password !== "" ? "Senha" : "Digite sua senha"
-                }
+                dataPlaceholder={password !== "" ? "Senha" : "Digite sua senha"}
               />
             </div>
 
