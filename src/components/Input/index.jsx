@@ -8,10 +8,10 @@ export const Input = forwardRef(
     if (error) {
       toast.error(error, {
         position: "top-right",
-        autoClose: 3000, // Tempo em milissegundos que o toast ficará visível
-        hideProgressBar: false, // Exibir barra de progresso
-        closeOnClick: true, // Fechar ao clicar no toast
-        pauseOnHover: true, // Pausar ao passar o mouse
+        autoClose: 3000, 
+        hideProgressBar: false, 
+        closeOnClick: true,
+        pauseOnHover: true,
       });
     }
     
