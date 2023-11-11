@@ -1,8 +1,12 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 export const HomeClient = () => {
   const { user } = useContext(AuthContext);
+
+  useEffect(() => {
+    
+  },[]);
 
   return (
     <>

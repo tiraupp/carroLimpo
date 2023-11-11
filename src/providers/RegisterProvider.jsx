@@ -11,14 +11,17 @@ export const RegisterProvider = ({ children }) => {
 
   const usuarioRegister = async (data) => {
     try {
-
-    
       const response = await api.post("/usuario", data);
-
-      console.log(response);
-
+      toast.success(`${response.data.nome}, seu cadastro foi efetuado com sucesso!`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
       navigate("/");
     } catch (error) {
+      console.log(error);
       toast.error(error.response.data.mensagem, {
         position: "top-right",
         autoClose: 3000,

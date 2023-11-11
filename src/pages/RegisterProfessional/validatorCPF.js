@@ -1,14 +1,19 @@
 import * as z from "zod";
 
 const celularRegex = /^\d{10,}$/i;
+const cpfRegex = /[0-9]{11}/;
 
-export const schema = z
+export const schemaCPF = z
   .object({
     nome: z.string().min(1, "Nome é obrigatório"),
-    email: z.string().min(1, "Email é obrigatório"),
+    email: z.string().email("Email inválido").min(1, "Email é obrigatório"),
     celular: z.string().refine((value) => celularRegex.test(value), {
       message:
         "Telefone inválido. Por favor, insira um número de telefone válido",
+    }),
+
+    cpf: z.string().refine((value) => cpfRegex.test(value), {
+      message: "Formato de CPF inválido",
     }),
     senha: z
       .string()

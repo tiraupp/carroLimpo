@@ -1,14 +1,18 @@
 import * as z from "zod";
 
 const celularRegex = /^\d{10,}$/i;
+const cnpjRegex = /[0-9]{14}/;
 
-export const schema = z
+export const schemaCNPJ = z
   .object({
     nome: z.string().min(1, "Nome é obrigatório"),
-    email: z.string().min(1, "Email é obrigatório"),
+    email: z.string().email("Email inválido").min(1, "Email é obrigatório"),
     celular: z.string().refine((value) => celularRegex.test(value), {
       message:
         "Telefone inválido. Por favor, insira um número de telefone válido",
+    }),
+    cnpj: z.string().refine((value) => cnpjRegex.test(value), {
+      message: "Formato de CNPJ inválido",
     }),
     senha: z
       .string()

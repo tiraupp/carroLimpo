@@ -77,7 +77,7 @@ export const AuthProvider = ({ children }) => {
       };
 
       navigate(toNavigate());
-      setUser(userResponse);
+      setUser(response.data);
     } catch (error) {
       toast.error(error.response.data.mensagem, {
         position: "top-right",

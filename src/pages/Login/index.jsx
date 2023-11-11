@@ -19,6 +19,7 @@ export const Login = () => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
+    clearErrors,
   } = useForm({
     resolver: zodResolver(schema),
   });
@@ -40,6 +41,7 @@ export const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 spanClassName="focusInput"
                 dataPlaceholder={email !== "" ? "Email" : "Digite seu email"}
+                clearErrors={clearErrors}
               />
             </div>
             <div className={styles.wrapInput}>
@@ -52,6 +54,7 @@ export const Login = () => {
                 onChange={(e) => setSenha(e.target.value)}
                 spanClassName="focusInput"
                 dataPlaceholder={senha !== "" ? "Senha" : "Digite sua senha"}
+                clearErrors={clearErrors}
               />
             </div>
 

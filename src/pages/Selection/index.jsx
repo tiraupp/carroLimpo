@@ -1,18 +1,14 @@
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { ImgLogo } from "../../components/ImgLogo";
 import styles from "./styles.module.scss";
-import { schema } from "./validator";
 
 export const Selection = () => {
   const {
     formState: { errors },
-  } = useForm({
-    resolver: zodResolver(schema),
-  });
+  } = useForm({});
 
   toast.error(errors, {
     position: "top-right",

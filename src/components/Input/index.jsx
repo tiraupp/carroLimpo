@@ -3,17 +3,20 @@ import { toast } from "react-toastify";
 import { Container } from "./styles";
 
 export const Input = forwardRef(
-  ({ id, error, className, spanClassName, dataPlaceholder, ...rest }, ref) => {
+  (
+    { id, error, className, spanClassName, dataPlaceholder, clearErrors, ...rest },
+    ref
+  ) => {
     if (error) {
       toast.error(error, {
         position: "top-right",
-        autoClose: 3000, 
-        hideProgressBar: false, 
+        autoClose: 3000,
+        hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
       });
+      clearErrors(id);
     }
-    
 
     return (
       <Container>
