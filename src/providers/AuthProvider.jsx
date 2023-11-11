@@ -22,16 +22,30 @@ export const AuthProvider = ({ children }) => {
           return;
         }
 
-        //const { id } = jwtDecode(token);
-
         api.defaults.headers.common.authorization = `Bearer ${token}`;
 
         const response = await api.get(`usuario`);
 
-        navigate(location.state?.pathname || "/home");
-
+        const toNavigate = () => {
+          switch (response.data.tipo_perfil) {
+            case 0:
+              return location.state?.pathname || "/homeadm";
+            case 1:
+              return location.state?.pathname || "/homeprofessional";
+            case 2:
+              return location.state?.pathname || "/homeclient";
+          }
+        };
+        navigate(toNavigate());
         setUser(response.data);
       } catch (error) {
+        toast.error(error.response.data.mensagem, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+        });
         console.error(error);
       } finally {
         setLoading(false);
@@ -51,17 +65,26 @@ export const AuthProvider = ({ children }) => {
 
       localStorage.setItem("@ts-carro_limpo:token", accessToken);
 
-      const toNavigate = location.state?.pathname || "/home";
+      const toNavigate = () => {
+        switch (response.data.tipo_perfil) {
+          case 0:
+            return location.state?.pathname || "/homeadm";
+          case 1:
+            return location.state?.pathname || "/homeprofessional";
+          case 2:
+            return location.state?.pathname || "/homeclient";
+        }
+      };
 
+      navigate(toNavigate());
       setUser(userResponse);
-      navigate(toNavigate);
     } catch (error) {
       toast.error(error.response.data.mensagem, {
         position: "top-right",
-        autoClose: 3000, // Tempo em milissegundos que o toast ficará visível
-        hideProgressBar: false, // Exibir barra de progresso
-        closeOnClick: true, // Fechar ao clicar no toast
-        pauseOnHover: true, // Pausar ao passar o mouse
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
       });
     }
   };

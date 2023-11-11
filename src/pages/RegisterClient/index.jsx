@@ -1,21 +1,29 @@
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useContext, useState } from "react";
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import { ImgLogo } from "../../components/ImgLogo";
 import { Input } from "../../components/Input";
+import { RegisterContext } from "../../providers/RegisterProvider";
 import styles from "./styles.module.scss";
-import { AuthContext } from "../../providers/AuthProvider";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { schema } from "../Selection/validator";
-import { Link } from "react-router-dom";
+import { schema } from "./validator";
 
 export const RegisterClient = () => {
-  const [name, setName] = useState("");
+  const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
+  const [senha, setSenha] = useState("");
   const [confirm, setConfirm] = useState("");
 
-  const { signIn } = useContext(AuthContext);
+  const { usuarioRegister } = useContext(RegisterContext);
+
+  const onSubmit = (data) => {
+    const userType = {
+      ...data,
+      tipo_perfil: "2",
+    };
+    usuarioRegister(userType);
+  };
 
   const {
     register,
@@ -25,7 +33,7 @@ export const RegisterClient = () => {
     resolver: zodResolver(schema),
   });
   return (
-    <form className={styles.loginForm} onSubmit={handleSubmit(signIn)}>
+    <form className={styles.loginForm} onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.container}>
         <div className={styles.containerLogin}>
           <div className={styles.wrapLogin}>
@@ -34,14 +42,14 @@ export const RegisterClient = () => {
             <span className={styles.loginFormTitle}></span>
             <div className={styles.wrapInput}>
               <Input
-                className={name !== "" ? `has-val styles.input` : "input"}
-                type="name"
-                id="name"
-                error={errors.name?.message}
-                {...register("name")}
-                onChange={(e) => setName(e.target.value)}
+                className={nome !== "" ? `has-val styles.input` : "input"}
+                type="nome"
+                id="nome"
+                error={errors.nome?.message}
+                {...register("nome")}
+                onChange={(e) => setNome(e.target.value)}
                 spanClassName="focusInput"
-                dataPlaceholder={name !== "" ? "Nome" : "Digite seu nome"}
+                dataPlaceholder={nome !== "" ? "Nome" : "Digite seu nome"}
               />
             </div>
 
@@ -67,36 +75,38 @@ export const RegisterClient = () => {
                 {...register("phone")}
                 onChange={(e) => setPhone(e.target.value)}
                 spanClassName="focusInput"
-                dataPlaceholder={phone !== "" ? "Nº Celular" : "Digite o Nº Celular"}
-              />
-            </div>
-
-            <div className={styles.wrapInput}>
-              <Input
-                className={password !== "" ? `has-val styles.input` : "input"}
-                type="password"
-                id="senha"
-                error={errors.senha?.message}
-                {...register("senha")}
-                onChange={(e) => setPassword(e.target.value)}
-                spanClassName="focusInput"
                 dataPlaceholder={
-                  password !== "" ? "Senha" : "Digite sua senha"
+                  phone !== "" ? "Nº Celular" : "Digite o Nº Celular"
                 }
               />
             </div>
 
             <div className={styles.wrapInput}>
               <Input
+                className={senha !== "" ? `has-val styles.input` : "input"}
+                type="password"
+                id="senha"
+                error={errors.senha?.message}
+                {...register("senha")}
+                onChange={(e) => setSenha(e.target.value)}
+                spanClassName="focusInput"
+                dataPlaceholder={senha !== "" ? "Senha" : "Digite sua senha"}
+              />
+            </div>
+
+            <div className={styles.wrapInput}>
+              <Input
                 className={confirm !== "" ? `has-val styles.input` : "input"}
-                type="confirm"
+                type="password"
                 id="confirm"
                 error={errors.confirm?.message}
                 {...register("confirm")}
                 onChange={(e) => setConfirm(e.target.value)}
                 spanClassName="focusInput"
                 dataPlaceholder={
-                  confirm !== "" ? "Confirme sua senha" : "Digite novamente sua senha"
+                  confirm !== ""
+                    ? "Confirme sua senha"
+                    : "Digite novamente sua senha"
                 }
               />
             </div>
@@ -112,11 +122,11 @@ export const RegisterClient = () => {
               </button>
             </div>
             <span className={styles.textCenter}>Já possui conta?</span>
-          <Link to="/" className={styles.link}>
-            <button className={styles.btnLogin} disabled={isSubmitting}>
-              Fazer Login
-            </button>
-          </Link>
+            <Link to="/" className={styles.link}>
+              <button className={styles.btnLogin} disabled={isSubmitting}>
+                Fazer Login
+              </button>
+            </Link>
             <p className={styles.footer}>
               Tiraupp Sistemas - Todos direitos reservados
             </p>

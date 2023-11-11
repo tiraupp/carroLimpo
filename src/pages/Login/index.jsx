@@ -11,7 +11,7 @@ import { schema } from "./validator";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [senha, setSenha] = useState("");
 
   const { signIn } = useContext(AuthContext);
 
@@ -35,7 +35,6 @@ export const Login = () => {
                 className={email !== "" ? `has-val styles.input` : "input"}
                 type="email"
                 id="email"
-                label="Email"
                 error={errors.email?.message}
                 {...register("email")}
                 onChange={(e) => setEmail(e.target.value)}
@@ -43,18 +42,16 @@ export const Login = () => {
                 dataPlaceholder={email !== "" ? "Email" : "Digite seu email"}
               />
             </div>
-
             <div className={styles.wrapInput}>
               <Input
-                className={password !== "" ? `has-val styles.input` : "input"}
+                className={senha !== "" ? `has-val styles.input` : "input"}
                 type="password"
                 id="senha"
-                label="Senha"
                 error={errors.senha?.message}
                 {...register("senha")}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setSenha(e.target.value)}
                 spanClassName="focusInput"
-                dataPlaceholder={password !== "" ? "Senha" : "Digite sua senha"}
+                dataPlaceholder={senha !== "" ? "Senha" : "Digite sua senha"}
               />
             </div>
 

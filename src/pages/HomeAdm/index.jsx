@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
-export const Home = () => {
+export const HomeAdm = () => {
 
   const { user} = useContext(AuthContext);
 

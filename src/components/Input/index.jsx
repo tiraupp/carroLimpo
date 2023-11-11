@@ -4,7 +4,6 @@ import { Container } from "./styles";
 
 export const Input = forwardRef(
   ({ id, error, className, spanClassName, dataPlaceholder, ...rest }, ref) => {
-    console.log(error);
     if (error) {
       toast.error(error, {
         position: "top-right",
