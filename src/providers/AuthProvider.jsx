@@ -17,6 +17,7 @@ export const AuthProvider = ({ children }) => {
     const loadUser = async () => {
       try {
         const token = localStorage.getItem("@ts-carro_limpo:token");
+        
 
         if (!token) {
           return;
@@ -33,7 +34,7 @@ export const AuthProvider = ({ children }) => {
             case 1:
               return location.state?.pathname || "/homeprofessional";
             case 2:
-              return location.state?.pathname || "/homeclient";
+              return location.state?.pathname || "/homeclient/meusagendamentos";
           }
         };
         navigate(toNavigate());
@@ -57,27 +58,31 @@ export const AuthProvider = ({ children }) => {
 
   const signIn = async (data) => {
     try {
-      const response = await api.post("/login", data);
+      const responseLogin = await api.post("/login", data);
 
-      const { id: userResponse, token: accessToken } = response.data;
+      const {token: accessToken } = responseLogin.data;
 
       api.defaults.headers.common.authorization = `Bearer ${accessToken}`;
-
+      
       localStorage.setItem("@ts-carro_limpo:token", accessToken);
 
+      const responseUsuario = await api.get(`usuario`);
+
+      
+
       const toNavigate = () => {
-        switch (response.data.tipo_perfil) {
+        switch (responseLogin.data.tipo_perfil) {
           case 0:
             return location.state?.pathname || "/homeadm";
           case 1:
             return location.state?.pathname || "/homeprofessional";
           case 2:
-            return location.state?.pathname || "/homeclient";
+            return location.state?.pathname || "/homeclient/meusagendamentos";
         }
       };
 
       navigate(toNavigate());
-      setUser(response.data);
+      setUser(responseUsuario.data);
     } catch (error) {
       toast.error(error.response.data.mensagem, {
         position: "top-right",

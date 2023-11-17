@@ -105,4 +105,8 @@ export const Container = styled.div`
     }
   }
 
+  .color-text-blue{
+    color: var(--color-text-blue);
+  }
+
 `;

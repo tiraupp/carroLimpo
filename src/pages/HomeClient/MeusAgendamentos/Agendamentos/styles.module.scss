@@ -1,0 +1,133 @@
+.containerAgendamentos {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+
+  gap: 4rem;
+  
+  
+}
+
+
+.containerMeusAgendamentos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100%;
+  overflow-x: scroll;
+
+}
+
+.titleMeusAgendamentos {
+  margin: 2rem;
+  color: var(--color-text-blue);
+}
+
+.meusAgendamentos {
+ margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.containerCardAgendamento {
+  background-color: var(--color-text-gray);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30rem;
+  height: 15rem;
+  padding: 2rem 2rem 0 2rem;
+  gap: 2rem;
+}
+
+.cardAgendamento {
+  color: var(--color-text-blue);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.btnAgendamento {
+  height: 4rem;
+  width: 15rem;
+  margin-bottom: 1rem;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  background: -webkit-linear-gradient(
+    to left,
+    var(--color-button-cancel-primary),
+    var(--color-button-cancel-secondary)
+  );
+  background: -o-linear-gradient(
+    to left,
+    var(--color-button-cancel-primary),
+    var(--color-button-cancel-secondary)
+  );
+  background: -moz-linear-gradient(
+    to left,
+    var(--color-button-cancel-primary),
+    var(--color-button-cancel-secondary)
+  );
+  background: linear-gradient(
+    to left,
+    var(--color-button-cancel-primary),
+    var(--color-button-cancel-secondary)
+  );
+}
+
+@media screen and (max-width: 769px) {
+  .wrapLogin {
+    width: 100%;
+  }
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.containerFooter {
+  background-color: #333;
+  color: #adadad;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+}
+
+.logo {
+  padding: 4rem;
+  font-size: 1.5rem;
+}
+
+.contatos {
+  display: block;
+  font-size: 2.5rem;
+  padding: 5rem;
+  color: #adadad;
+
+  line-height: 1.2;
+  text-align: center;
+}
+
+.titleEndereco {
+  display: block;
+  font-size: 2.5rem;
+  padding: 5rem;
+  color: #adadad;
+
+  line-height: 1.2;
+  text-align: center;
+}
+
+.iconeSearching {
+  width: 30rem;
+  height: 30rem;
+}

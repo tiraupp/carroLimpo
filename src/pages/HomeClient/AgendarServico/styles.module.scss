@@ -1,0 +1,434 @@
+.localizarProfissional {
+  width: 95%;
+  height: 75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerProfissional {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10rem;
+}
+
+.dadosProfissional {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1rem;
+  width: 100%;
+  max-width: 50rem;
+  box-sizing: border-box;
+}
+
+.title {
+  margin-top: 1rem;
+  color: var(--color-text-gray);
+  font-weight: bold;
+}
+
+.imagemProfissional {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 10px;
+}
+
+.goStar {
+  color: yellow;
+}
+
+.containerServicoProfissional {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.servicosProfissional {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.titleServicos{
+  color: var(--color-text-blue);
+}
+
+.cardProfissional {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 15rem;
+
+  border: 0.5px solid var(--color-text-blue);
+  border-radius: 10px;
+  padding: 0.5rem;
+
+  text-align: center;
+
+  gap: 1rem;
+  color: var(--color-text-blue);
+  font-size: small;
+  overflow: hidden;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.cardProfissionalSelecionado{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 15rem;
+
+  background-color: var(--color-text-blue);
+  border-radius: 10px;
+  padding: 0.5rem;
+
+  text-align: center;
+
+  gap: 1rem;
+  color: var(--color-text-gray);
+  font-size: small;
+  overflow: hidden;
+  transition: background-color 0.3s, border-color 0.3s;
+
+}
+
+.inputRadio {
+  appearance: none;
+  cursor: pointer;
+  width: 10rem;
+  height: 15rem;
+  position: absolute;
+  border-radius: 10px;
+}
+
+
+
+.imagemServico {
+  width: 9rem;
+  height: 8rem;
+  border-radius: 10px;
+}
+
+
+.formAgendamentos {
+  width: 95%;
+  height: 25rem;
+  background: white;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.11);
+  border-radius: 10px;
+  margin: 2rem 0 2rem 0;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.agendamentos {
+ 
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+ 
+  height: 100%;
+
+  align-items: center;
+}
+
+.divSelecaoDados {
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem 0.5rem 2rem;
+}
+
+.inputSelecaoDados {
+  display: flex;
+  justify-content: space-around;
+
+  background-color: transparent;
+  border: 0.1rem solid rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  height: 4rem;
+
+  padding: 8px;
+  font-size: 16px;
+  text-align-last: center;
+}
+
+.selecaoDados {
+  display: flex;
+  flex-direction: column;
+
+  background-color: transparent;
+  border: 0.1rem solid rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  height: 4rem;
+
+  padding: 8px;
+  font-size: 16px;
+  text-align-last: center;
+}
+
+.divBtn {
+  flex-grow: 1;
+  height: 100%;
+  width: 20rem;
+}
+
+.formBtn {
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  color: var(--color-text-gray);
+
+  background: -webkit-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: -o-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: -moz-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+}
+
+.formBtn {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+:disabled {
+  filter: brightness(0.8);
+  cursor: not-allowed;
+  display: inline-block;
+}
+
+.h3title {
+  color: var(--color-text-gray);
+}
+
+
+
+.divSelecaoHorario {
+  width: 60rem;
+  height: 40rem;
+  margin: 2rem 0;
+  border: 1px solid var(--color-text-gray);
+  border-radius: 10px;
+  padding: 3rem;
+  height: 20rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+}
+
+.cardHorarioSelecionado{
+  height: 3rem;
+  width: 10rem;
+  color: var(--color-text-gray);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 10px;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  background: -webkit-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: -o-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: -moz-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+}
+
+
+.cardHorario{
+  height: 3rem;
+  width: 10rem;
+  color: var(--color-text-blue);
+
+  border: none;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+
+  background: -webkit-linear-gradient(
+    to left,
+    var(--color-button-selection-login-primary),
+    var(--color-button-selection-login-secondary)
+  );
+  background: -o-linear-gradient(
+    to left,
+    var(--color-button-selection-login-primary),
+    var(--color-button-selection-login-secondary)
+  );
+  background: -moz-linear-gradient(
+    to left,
+    var(--color-button-selection-login-primary),
+    var(--color-button-selection-login-secondary)
+  );
+  background: linear-gradient(
+    to left,
+    var(--color-button-selection-login-primary),
+    var(--color-button-selection-login-secondary)
+  );
+}
+
+.radioHorarios{
+  appearance: none;
+  cursor: pointer;
+  height: 3rem;
+  width: 10rem;
+  position: absolute;
+  border-radius: 10px;
+  
+}
+
+.divBtnAgendar{
+  height: 5rem;
+  width: 25rem;
+  color: var(--color-text-gray);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 10px;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  background: -webkit-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: -o-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: -moz-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+}
+
+.btnAgendar{
+  height: 5rem;
+  width: 25rem;
+  background-color: transparent;
+  border: none;
+  color: var(--color-text-gray);
+}
+
+@media screen and (max-width: 769px) {
+  .wrapLogin {
+    width: 100%;
+  }
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.containerFooter {
+  background-color: #333;
+  color: #adadad;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+}
+
+.logo {
+  padding: 4rem;
+  font-size: 1.5rem;
+}
+
+.contatos {
+  display: block;
+  font-size: 2.5rem;
+  padding: 5rem;
+  color: #adadad;
+
+  line-height: 1.2;
+  text-align: center;
+}
+
+.titleEndereco {
+  display: block;
+  font-size: 2.5rem;
+  padding: 5rem;
+  color: #adadad;
+
+  line-height: 1.2;
+  text-align: center;
+}
+
+.icone {
+  width: 25rem;
+  height: 25rem;
+}

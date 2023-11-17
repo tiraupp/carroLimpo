@@ -7,7 +7,10 @@ export const Global = createGlobalStyle`
     --color-button-secondary: #00155E;
     --color-button-selection-login-primary: #ADADAD;
     --color-button-selection-login-secondary: #DADADA;
+    --color-button-cancel-primary: #DA0000;
+    --color-button-cancel-secondary: #8D0505;
     --color-text-button-selection-login: #001B79;
+    
     --color-text-blue: #010E39;
     --color-text-gray: #ADADAD;
 
