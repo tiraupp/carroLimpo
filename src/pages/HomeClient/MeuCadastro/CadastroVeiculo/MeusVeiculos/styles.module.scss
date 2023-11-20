@@ -1,0 +1,159 @@
+
+
+
+
+.containerMeusVeiculos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  align-items: stretch;
+}
+
+.titleMeusVeiculos {
+  margin: 2rem;
+  color: var(--color-text-gray);
+}
+
+.meusVeiculos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 5rem ;
+}
+
+.cardVeiculo {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 15rem;
+
+  border: 0.5px solid var(--color-text-gray);
+  border-radius: 10px;
+  padding: 0.5rem;
+
+  text-align: center;
+
+  gap: 1rem;
+  color: var(--color-text-gray);
+  font-size: small;
+  overflow: hidden;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.cardVeiculoSelecionado{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 15rem;
+
+  background-color: var(--color-text-blue);
+  border-radius: 10px;
+  padding: 0.5rem;
+
+  text-align: center;
+
+  gap: 1rem;
+  color: var(--color-text-gray);
+  font-size: small;
+  overflow: hidden;
+  transition: background-color 0.3s, border-color 0.3s;
+
+}
+
+.inputRadio {
+  appearance: none;
+  cursor: pointer;
+  width: 10rem;
+  height: 15rem;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.containerBtn{
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  width: 100%;
+}
+
+.btnAtualizar{
+  width: 20rem;
+  background-color: var(--color-text-gray);
+  color: var(--color-text-blue);
+  border: none;
+  border-radius: 10px;
+}
+
+.btnCadastrar{
+  width: 20rem;
+  background-color: var(--color-text-blue);
+  color: var(--color-text-gray);
+  border: none;
+  border-radius: 10px;
+}
+
+.btnExcluir{
+  width: 20rem;
+  background-color: var(--color-button-cancel-secondary);
+  color: var(--color-text-gray);
+  border: none;
+  border-radius: 10px;
+}
+
+
+@media screen and (max-width: 769px) {
+  .wrapLogin {
+    width: 100%;
+  }
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.containerFooter {
+  background-color: #333;
+  color: #adadad;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+}
+
+.logo {
+  padding: 4rem;
+  font-size: 1.5rem;
+}
+
+.contatos {
+  display: block;
+  font-size: 2.5rem;
+  padding: 5rem;
+  color: #adadad;
+
+  line-height: 1.2;
+  text-align: center;
+}
+
+.titleEndereco {
+  display: block;
+  font-size: 2.5rem;
+  padding: 5rem;
+  color: #adadad;
+
+  line-height: 1.2;
+  text-align: center;
+}
+
+.iconeSearching {
+  width: 30rem;
+  height: 30rem;
+}

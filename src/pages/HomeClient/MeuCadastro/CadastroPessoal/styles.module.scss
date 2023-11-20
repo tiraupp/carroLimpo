@@ -1,91 +1,91 @@
-.containerAgendamentos {
-  width: 100%;
 
-  display: flex;
-  flex-direction: row;
-
-  gap: 4rem;
-  
-  
-}
-
-
-.containerMeusAgendamentos {
+.containerMeuCadastro{
   display: flex;
   flex-direction: column;
   align-items: center;
 
   height: 100%;
   overflow-x: scroll;
-
 }
 
 .titleMeusAgendamentos {
-  margin: 2rem;
+  margin: 1rem;
   color: var(--color-text-blue);
 }
 
-.meusAgendamentos {
- margin-bottom: 2rem;
+.formMeuCadastro {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-}
-
-.containerCardAgendamento {
   background-color: var(--color-text-gray);
+  padding: 5rem;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 30rem;
-  height: 15rem;
-  padding: 2rem 2rem 0 2rem;
-  gap: 2rem;
-}
-
-.cardAgendamento {
   color: var(--color-text-blue);
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
 }
 
-.btnAgendamento {
-  height: 4rem;
-  width: 15rem;
-  margin-bottom: 1rem;
+.wrapInput {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 37px;
+}
+.containerLoginFormBtn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
+.loginFormBtn {
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  color: var(--color-text-gray);
+
+  line-height: 1.2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+width: 80%;
+  height: 6rem;
+
   background: -webkit-linear-gradient(
     to left,
-    var(--color-button-cancel-primary),
-    var(--color-button-cancel-secondary)
+    var(--color-button-primary),
+    var(--color-button-secondary)
   );
   background: -o-linear-gradient(
     to left,
-    var(--color-button-cancel-primary),
-    var(--color-button-cancel-secondary)
+    var(--color-button-primary),
+    var(--color-button-secondary)
   );
   background: -moz-linear-gradient(
     to left,
-    var(--color-button-cancel-primary),
-    var(--color-button-cancel-secondary)
+    var(--color-button-primary),
+    var(--color-button-secondary)
   );
   background: linear-gradient(
     to left,
-    var(--color-button-cancel-primary),
-    var(--color-button-cancel-secondary)
+    var(--color-button-primary),
+    var(--color-button-secondary)
   );
 }
 
-@media screen and (max-width: 769px) {
-  .wrapLogin {
-    width: 100%;
+.loginForm-btn {
+  &:hover {
+    cursor: pointer;
   }
 }
+
+:disabled {
+  filter: brightness(0.8);
+  cursor: not-allowed;
+  display: inline-block;
+}
+
+
 
 .container {
   min-height: 100vh;
@@ -130,4 +130,17 @@
 .iconeSearching {
   width: 30rem;
   height: 30rem;
+}
+
+
+@media screen and (max-width: 769px) {
+
+
+  .formMeuCadastro {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 2rem;
+  }
 }

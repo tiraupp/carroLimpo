@@ -213,7 +213,6 @@ export const AgendarServico = () => {
                   type="radio"
                   name="servicoSelecionado"
                   value={id}
-                  checked={id === servicoSelecionado.id ? true : false}
                   onChange={() => {
                     setServicoSelecionado({
                       nome,

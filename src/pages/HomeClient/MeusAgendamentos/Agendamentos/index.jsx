@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { Modal } from "../../../../modal/Modal";
 import { api } from "../../../../services/api";
 import styles from "./styles.module.scss";
+import searchBro from "../../../../../src/assets/search-bro.svg";
 
 export const Agendamentos = ({ opcaoAgendamento }) => {
   const { user } = useContext(AuthContext);
@@ -99,9 +100,22 @@ export const Agendamentos = ({ opcaoAgendamento }) => {
   return (
     <div className={styles.containerMeusAgendamentos}>
       <h2 className={styles.titleMeusAgendamentos}>
-        {" "}
         Meus Agendamentos: {opcaoAgendamento}
       </h2>
+
+      {agendamento.length < 1 ? 
+      <div>
+      <img
+        className={styles.imgSearch}
+        src={searchBro}
+        alt="Icone nenhum veiculo cadastrado"
+      />
+      <p className={styles.mensagem}>
+        Você ainda não possui agendamentos {opcaoAgendamento}.
+      </p>
+    </div>
+:
+    
       <div className={styles.meusAgendamentos}>
         {agendamento.map(
           ({
@@ -154,6 +168,7 @@ export const Agendamentos = ({ opcaoAgendamento }) => {
           )
         )}
       </div>
+}
       <Modal
         isOpen={isModalOpen}
         message={{

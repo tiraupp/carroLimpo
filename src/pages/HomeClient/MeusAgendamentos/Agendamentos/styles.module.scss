@@ -20,6 +20,10 @@
 
 }
 
+.mensagem{
+  color: var(--color-text-gray);
+}
+
 .titleMeusAgendamentos {
   margin: 2rem;
   color: var(--color-text-blue);
@@ -81,11 +85,7 @@
   );
 }
 
-@media screen and (max-width: 769px) {
-  .wrapLogin {
-    width: 100%;
-  }
-}
+
 
 .container {
   min-height: 100vh;
@@ -93,41 +93,28 @@
   flex-direction: column;
 }
 
-.containerFooter {
-  background-color: #333;
-  color: #adadad;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100vw;
-}
-
-.logo {
-  padding: 4rem;
-  font-size: 1.5rem;
-}
-
-.contatos {
-  display: block;
-  font-size: 2.5rem;
-  padding: 5rem;
-  color: #adadad;
-
-  line-height: 1.2;
-  text-align: center;
-}
-
-.titleEndereco {
-  display: block;
-  font-size: 2.5rem;
-  padding: 5rem;
-  color: #adadad;
-
-  line-height: 1.2;
-  text-align: center;
-}
-
 .iconeSearching {
   width: 30rem;
   height: 30rem;
+}
+
+
+@media screen and (max-width: 769px) {
+  .titleMeusAgendamentos {
+    margin: 1rem;
+  }
+  
+  .meusAgendamentos {
+   margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .containerCardAgendamento {
+    width: 28rem;
+    height: 100%;
+    padding: 1rem;
+    gap: 2rem;
+  }
 }

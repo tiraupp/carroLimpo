@@ -1,0 +1,136 @@
+.containerMeuCadastro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100%;
+  overflow-x: scroll;
+}
+
+.titleMeusAgendamentos {
+  margin: 1rem;
+  color: var(--color-text-blue);
+}
+
+.formMeuCadastro {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  background-color: var(--color-text-gray);
+  padding: 3rem;
+  border-radius: 10px;
+  color: var(--color-text-blue);
+}
+
+.wrapInput {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 37px;
+}
+.containerLoginFormBtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginFormBtn {
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  color: var(--color-text-gray);
+
+  line-height: 1.2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 6rem;
+
+  background: -webkit-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: -o-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: -moz-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+}
+
+.loginForm-btn {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+:disabled {
+  filter: brightness(0.8);
+  cursor: not-allowed;
+  display: inline-block;
+}
+
+@media screen and (max-width: 769px) {
+  .wrapLogin {
+    width: 100%;
+  }
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.containerFooter {
+  background-color: #333;
+  color: #adadad;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+}
+
+.logo {
+  padding: 4rem;
+  font-size: 1.5rem;
+}
+
+.contatos {
+  display: block;
+  font-size: 2.5rem;
+  padding: 5rem;
+  color: #adadad;
+
+  line-height: 1.2;
+  text-align: center;
+}
+
+.titleEndereco {
+  display: block;
+  font-size: 2.5rem;
+  padding: 5rem;
+  color: #adadad;
+
+  line-height: 1.2;
+  text-align: center;
+}
+
+.iconeSearching {
+  width: 30rem;
+  height: 30rem;
+}

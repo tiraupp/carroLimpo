@@ -8,6 +8,7 @@ export const Input = forwardRef(
     ref
   ) => {
     if (error) {
+      console.log(error);
       toast.error(error, {
         position: "top-right",
         autoClose: 3000,
@@ -17,7 +18,7 @@ export const Input = forwardRef(
       });
       clearErrors(id);
     }
-
+    
     return (
       <Container>
         <input className={className} id={id} ref={ref} {...rest} />

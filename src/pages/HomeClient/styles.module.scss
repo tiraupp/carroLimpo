@@ -18,6 +18,7 @@
 
 .wrap {
   width: 95%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +32,6 @@
 }
 
 .menuContainer {
-  height: 100%;
   width: 100%;
   border-radius: 10px 10px 0 0;
   display: flex;
@@ -48,28 +48,19 @@
 .saudacao {
   border-radius: 10px 10px 0 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 0.5rem;
   padding: 1rem;
 }
 
-.containerOpcoesMenu {
+.usuario {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-}
-
-.opcoesMenu {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-top: 2rem;
-  color: var(--color-text-gray);
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 2.5rem;
 
   color: #adadad;
 
@@ -86,28 +77,44 @@
   text-align: center;
 }
 
+.imagemContainer {
+  position: relative;
+  display: inline-block;
+}
+
 .imagemPerfil {
-  width: 10rem;
-  height: 10rem;
+  width: 12rem;
+  height: 12rem;
   border-radius: 50px;
+}
+
+.botaoEdicao {
+  position: absolute;
+  top: 95%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-gray);
+  font-size: 3rem;
+}
+
+.containerOpcoesMenu {
+  width: 100%;
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  align-content: center;
+  margin-top: 2rem;
+  color: var(--color-text-gray);
 }
 
 .menu {
   text-decoration: none;
   color: var(--color-text-gray);
-}
-
-.containerUsuario {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 5rem;
-  color: var(--color-text-gray);
-}
-
-.goStar{
-  color: yellow;
 }
 
 .formAgendamentos {
@@ -121,9 +128,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  // display: grid;
-  // grid-template-columns: 80% 1fr; /* O botão ocupa 30% e o restante é dividido igualmente */
-  // gap: 20px; /* Espaçamento entre os elementos do grid */
 }
 
 .agendamentos {
@@ -298,60 +302,86 @@
   text-decoration: none;
 }
 
-.footer {
-  font-size: 14px;
-  color: #adadad;
-  line-height: 1.5;
-  margin-top: 4rem;
-  margin-bottom: 1rem;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@media screen and (max-width: 769px) {
-  .wrapLogin {
-    width: 100%;
-  }
-}
-
-.container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 .containerFooter {
   background-color: #333;
   color: #adadad;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   width: 100vw;
 }
 
-.logo {
-  padding: 4rem;
+.containerLogo {
+  color: #adadad;
+  padding: 2rem;
   font-size: 1.5rem;
 }
 
-.contatos {
-  display: block;
-  font-size: 2.5rem;
-  padding: 5rem;
+.containerContatos {
+  display: flex;
+  flex-direction: column;
   color: #adadad;
-
-  line-height: 1.2;
-  text-align: center;
+  padding: 2rem;
 }
 
-.titleEndereco {
-  display: block;
-  font-size: 2.5rem;
-  padding: 5rem;
+.tituloContatos {
+  font-size: 2rem;
   color: #adadad;
+  margin-bottom: 1rem;
+}
 
-  line-height: 1.2;
-  text-align: center;
+.iconesContatos {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.icones {
+  font-size: 3rem;
+  color: var(--color-text-gray);
+  cursor: pointer;
+}
+
+.containerEndereco {
+  color: #adadad;
+  padding: 2rem;
+}
+
+.tituloEndereco {
+  font-size: 2rem;
+  color: #adadad;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 769px) {
+
+  .container {
+    padding: 0;
+  }
+
+  .wrap {
+    width: 99%;
+  }
+  
+  .containerOpcoesMenu {
+    padding-right: 1rem;
+    flex-direction: column;
+    align-items: flex-end;
+    align-content: space-between;
+    margin-top: 1rem;
+  }
+  .containerFooter {
+    flex-direction: column;
+  }
+  .tituloContatos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tituloEndereco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

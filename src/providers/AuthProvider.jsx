@@ -56,6 +56,42 @@ export const AuthProvider = ({ children }) => {
     loadUser();
   }, []);
 
+  const recarregarDadosUsuario = async () => {
+    try {
+      const token = localStorage.getItem("@ts-carro_limpo:token");
+      
+
+      if (!token) {
+        return;
+      }
+
+      api.defaults.headers.common.authorization = `Bearer ${token}`;
+
+      const response = await api.get(`usuario`);
+
+      const toNavigate = () => {
+ 
+
+location.state?.pathname 
+
+        }
+     
+      navigate(toNavigate());
+      setUser(response.data);
+    } catch (error) {
+      toast.error(error.response.data.mensagem, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   const signIn = async (data) => {
     try {
       const responseLogin = await api.post("/login", data);
@@ -95,7 +131,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ signIn, user, loading }}>
+    <AuthContext.Provider value={{ signIn, user, loading, recarregarDadosUsuario }}>
       {children}
     </AuthContext.Provider>
   );

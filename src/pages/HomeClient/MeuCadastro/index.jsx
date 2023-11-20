@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 
-import { Link } from "react-router-dom";
-import { Agendamentos } from "./Agendamentos";
+import { GoStarFill } from "react-icons/go";
+import { Link, Outlet } from "react-router-dom";
 import styles from "./styles.module.scss";
 
 export const MeuCadastro = () => {
@@ -17,34 +17,34 @@ export const MeuCadastro = () => {
   return (
     <div className={styles.containerAgendamentos}>
       <div className={styles.containerMenuLateral}>
-        <Link
-          className={styles.opcaoMenu}
-          onClick={(e) => openAgendamentos(e, "ativos")}
-        >
+        <Link className={styles.opcaoMenu} to={"dadospessoais"}>
           Dados Pessoais
         </Link>
-        <Link
-          className={styles.opcaoMenu}
-          onClick={(e) => openAgendamentos(e, "concluídos")}
-        >
+        <Link className={styles.opcaoMenu} to={"endereco"}>
           Endereço
         </Link>
-        <Link
-          className={styles.opcaoMenu}
-          onClick={(e) => openAgendamentos(e, "cancelados")}
-        >
+        <Link className={styles.opcaoMenu} to={"veiculos"}>
           Veículos
         </Link>
-        <Link
-          className={styles.opcaoMenu}
-          onClick={(e) => openAgendamentos(e, "todos")}
-        >
+        <Link className={styles.opcaoMenu} to={"seguranca"}>
           Segurança
         </Link>
       </div>
-      <div className={styles.containerMeusAgendamentos}>
-        <Agendamentos opcaoAgendamento={opcaoMenuCadastro} />
+      <div className={styles.containerMeusDados}>
+        <div className={styles.containerUsuario}>
+          <span>Programa de Fidelidade: {user.pontos}</span>
+          <span>
+            Classificação:{" "}
+            {Array.from({ length: user.avaliacao }, (_, index) => (
+              <span key={index}>
+                <GoStarFill className={styles.goStar} />
+              </span>
+            ))}
+          </span>
+        </div>
+        <Outlet />
       </div>
+      
     </div>
   );
 };
