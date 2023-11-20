@@ -26,7 +26,8 @@ export const LocalizarProfissional = () => {
   } = useForm();
 
   const loadDados = async () => {
-    if(!user.endereco.cidade){
+    
+    if(!user.endereco[0].cidade){
       toast.info("Você não possui endereço cadastrado, cadastre um endereço para uma melhor experiência", {
         position: "top-right",
         autoClose: 3000,
@@ -48,7 +49,7 @@ export const LocalizarProfissional = () => {
 
   const loadProfissionais = async (data) => {
     if(!localizarProfissional && !cidade){
-      return toast.warn("Informe nome do profissional/empresa ou a ciadde", {
+      return toast.warn("Informe nome do profissional/empresa ou a cidade", {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
