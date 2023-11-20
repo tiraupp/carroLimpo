@@ -155,6 +155,9 @@ width: 70%;
 
 @media screen and (max-width: 769px) {
   .wrapLogin {
-    width: 100%;
+    width: 85%;
+    overflow: hidden;
+    padding: 5rem 5rem 1rem 5rem;
+
   }
 }

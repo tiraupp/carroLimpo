@@ -51,7 +51,6 @@
   text-align: center;
 }
 
-
 .wrapInput {
   width: 100%;
   position: relative;
@@ -81,10 +80,26 @@
   width: 100%;
   height: 6rem;
 
-  background: -webkit-linear-gradient(to left, var(--color-button-primary), var(--color-button-secondary));
-  background: -o-linear-gradient(to left, var(--color-button-primary), var(--color-button-secondary));
-  background: -moz-linear-gradient(to left, var(--color-button-primary), var(--color-button-secondary));
-  background: linear-gradient(to left, var(--color-button-primary), var(--color-button-secondary));
+  background: -webkit-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: -o-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: -moz-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
 }
 
 .loginForm-btn {
@@ -161,10 +176,6 @@
   }
 }
 
-
-
-
-
 .footer {
   font-size: 14px;
   color: #adadad;
@@ -175,4 +186,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 769px) {
+  .wrapLogin {
+    width: 95%;
+  }
 }

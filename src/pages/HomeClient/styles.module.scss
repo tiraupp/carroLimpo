@@ -355,21 +355,74 @@
 }
 
 @media screen and (max-width: 769px) {
-
   .container {
     padding: 0;
+    justify-content: flex-start;
+    height: 100%;
+    min-height: 0;
+    padding-bottom: 3rem;
   }
 
   .wrap {
     width: 99%;
+    height: 100%;
+    overflow: scroll;
   }
-  
+
+  .menuContainer {
+    top: 0%;
+    left: 0%;
+  }
+
+  .saudacao {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.2rem;
+    padding: 0.2rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-left: 1rem;
+    text-align: start;
+  }
+
+  .data {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    text-align: start;
+  }
+
+  .imagemPerfil {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50px;
+  }
+
+  .botaoEdicao {
+    top: 85%;
+    left: 75%;
+    font-size: 1.8rem;
+  }
+
   .containerOpcoesMenu {
     padding-right: 1rem;
     flex-direction: column;
     align-items: flex-end;
     align-content: space-between;
     margin-top: 1rem;
+  }
+
+  .containerLogo {
+    padding: 0.5rem;
+  }
+
+  .containerContatos {
+    padding: 0.5rem;
+  }
+
+  .containerEndereco {
+    padding: 0.5rem;
   }
   .containerFooter {
     flex-direction: column;
