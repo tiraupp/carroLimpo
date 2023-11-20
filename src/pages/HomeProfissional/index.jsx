@@ -7,15 +7,15 @@ import { ImgLogo } from "../../components/ImgLogo";
 import { api } from "../../services/api";
 import styles from "./styles.module.scss";
 
+import { BiLike } from "react-icons/bi";
+import { FaWhatsapp } from "react-icons/fa";
+import { GrInstagram, GrLinkedin } from "react-icons/gr";
+import { MdOutlineEmail } from "react-icons/md";
 import { RiImageEditLine } from "react-icons/ri";
 import { ModalEditarFoto } from "../../modal/ModalEditarFoto";
-import { FaWhatsapp } from "react-icons/fa";
-import { GrInstagram ,GrLinkedin } from "react-icons/gr";
-import { MdOutlineEmail } from "react-icons/md";
-import { BiLike } from "react-icons/bi";
 import { ModalSobre } from "../../modal/ModalSobre";
 
-export const HomeClient = () => {
+export const HomeProfissional = () => {
   const { user, recarregarDadosUsuario } = useContext(AuthContext);
 
   const dataAtual = new Date();
@@ -34,8 +34,6 @@ export const HomeClient = () => {
   };
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalSobreOpen, setIsModalSobreOpen] = useState(false);
-
-
 
   const handleOpenModalSobre = () => {
     setIsModalSobreOpen(true);
@@ -57,7 +55,7 @@ export const HomeClient = () => {
     try {
       const formData = new FormData();
       formData.append("arquivo", data.arquivo[0]);
-      console.log(data.arquivo[0]);
+
       const response = await api.put("/usuario/editarimagem", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
@@ -116,10 +114,10 @@ export const HomeClient = () => {
               <Link className={styles.menu} to={"meucadastro/dadospessoais"}>
                 Meu Cadastro
               </Link>
-              <Link className={styles.menu} to={"localizarprofissional"}>
-                Agendar
+              <Link className={styles.menu} to={"servicos"}>
+                Serviço
               </Link>
-              <Link className={styles.menu} to={"meusagendamentos"}>
+              <Link className={styles.menu} to={"agendamentos"}>
                 Meus Agendamentos
               </Link>
               <Link
@@ -143,46 +141,42 @@ export const HomeClient = () => {
         <div className={styles.containerContatos}>
           <p className={styles.tituloContatos}>Contatos:</p>
           <div className={styles.iconesContatos}>
-          <a
-          className={styles.icones}
-            href="mailto:tiraupp@rede.ulbra.br"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <MdOutlineEmail />
-          </a>
-          <a
-          className={styles.icones}
-            href="https://www.instagram.com/ocarrolimpo/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <GrInstagram />
-          </a>
-          <a
-          className={styles.icones}
-            href="https://wa.me/48999799419"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaWhatsapp />
-          </a>
-          <a
-          className={styles.icones}
-            href="https://www.linkedin.com/in/tiago-raupp/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <GrLinkedin />
-          </a>
-          <a
-          className={styles.icones}
-          onClick={handleOpenModalSobre}
-          >
-            <BiLike />
-          </a>
+            <a
+              className={styles.icones}
+              href="mailto:tiraupp@rede.ulbra.br"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <MdOutlineEmail />
+            </a>
+            <a
+              className={styles.icones}
+              href="https://www.instagram.com/ocarrolimpo/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GrInstagram />
+            </a>
+            <a
+              className={styles.icones}
+              href="https://wa.me/48999799419"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaWhatsapp />
+            </a>
+            <a
+              className={styles.icones}
+              href="https://www.linkedin.com/in/tiago-raupp/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GrLinkedin />
+            </a>
+            <a className={styles.icones} onClick={handleOpenModalSobre}>
+              <BiLike />
+            </a>
           </div>
-          
         </div>
         <div className={styles.containerEndereco}>
           <p className={styles.tituloEndereco}>Endereço:</p>
@@ -197,10 +191,7 @@ export const HomeClient = () => {
         onClose={handleCloseModal}
         onFileUpload={handleFileUpload}
       />
-      <ModalSobre
-        isOpen={isModalSobreOpen}
-        onClose={handleCloseModalSobre}
-      />
+      <ModalSobre isOpen={isModalSobreOpen} onClose={handleCloseModalSobre} />
     </>
   );
 };

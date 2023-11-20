@@ -12,7 +12,7 @@ export const ModalSobre = ({ isOpen, onClose }) => {
         <div className={styles.modalContentFoto}>
           <div>
             <label>Aplicativo para gestão de </label>
-            <label> agenda de lavação Automotiva.</label>
+            <label> agenda de lavação automotiva.</label>
           </div>
           <label>Desenvolvido por Tiago Raupp da Rosa</label>
           <div>

@@ -1,0 +1,68 @@
+.nenhumServicoEncontrado{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.imgSearch{
+  width: 25rem;
+}
+
+.mensagem{
+  color: var(--color-text-gray);
+}
+
+.containerBtn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Btn {
+  font-size: 15px;
+  border: none;
+  border-radius: 10px;
+  color: var(--color-text-gray);
+
+  line-height: 1.2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+width: 70%;
+  height: 6rem;
+
+  background: -webkit-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: -o-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: -moz-linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+  background: linear-gradient(
+    to left,
+    var(--color-button-primary),
+    var(--color-button-secondary)
+  );
+}
+
+.Btn {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+
+
+@media screen and (max-width: 769px) {
+}

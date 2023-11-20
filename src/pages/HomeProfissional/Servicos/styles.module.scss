@@ -1,0 +1,137 @@
+
+.containerMeuCadastro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100%;
+  overflow-x: scroll;
+}
+
+.titleMeusAgendamentos {
+  margin: 2rem;
+  color: var(--color-text-blue);
+}
+
+
+
+.containerMeusServicos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  align-items: stretch;
+}
+
+.meusServicos {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 0 5rem ;
+}
+
+.cardServico {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 15rem;
+
+  border: 0.5px solid var(--color-text-blue);
+  border-radius: 10px;
+  padding: 0.5rem;
+
+  text-align: center;
+
+  gap: 1rem;
+  color: var(--color-text-gray);
+  font-size: small;
+  overflow: hidden;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.cardServicoSelecionado{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 15rem;
+
+  background-color: var(--color-text-blue);
+  border-radius: 10px;
+  padding: 0.5rem;
+
+  text-align: center;
+
+  gap: 1rem;
+  color: var(--color-text-gray);
+  font-size: small;
+  overflow: hidden;
+  transition: background-color 0.3s, border-color 0.3s;
+
+}
+
+.inputRadio {
+  appearance: none;
+  cursor: pointer;
+  width: 10rem;
+  height: 15rem;
+  position: absolute;
+  border-radius: 10px;
+}
+
+
+
+
+@media screen and (max-width: 769px) {
+  .wrapLogin {
+    width: 100%;
+  }
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.containerFooter {
+  background-color: #333;
+  color: #adadad;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100vw;
+}
+
+.logo {
+  padding: 4rem;
+  font-size: 1.5rem;
+}
+
+.contatos {
+  display: block;
+  font-size: 2.5rem;
+  padding: 5rem;
+  color: #adadad;
+
+  line-height: 1.2;
+  text-align: center;
+}
+
+.titleEndereco {
+  display: block;
+  font-size: 2.5rem;
+  padding: 5rem;
+  color: #adadad;
+
+  line-height: 1.2;
+  text-align: center;
+}
+
+.iconeSearching {
+  width: 30rem;
+  height: 30rem;
+}

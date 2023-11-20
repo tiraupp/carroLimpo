@@ -1,0 +1,140 @@
+.containerMeusServicos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  align-items: stretch;
+}
+
+.titleMeusServicos {
+  margin: 2rem;
+  color: var(--color-text-gray);
+}
+
+.meusServicos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 5rem;
+}
+
+.cardServico {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 15rem;
+
+  border: 0.5px solid var(--color-text-gray);
+  border-radius: 10px;
+  padding: 0.5rem;
+
+  text-align: center;
+
+  gap: 1rem;
+  color: var(--color-text-gray);
+  font-size: small;
+  overflow: hidden;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.cardServicoSelecionado {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 15rem;
+
+  background-color: var(--color-text-blue);
+  border-radius: 10px;
+  padding: 0.5rem;
+
+  text-align: center;
+
+  gap: 1rem;
+  color: var(--color-text-gray);
+  font-size: small;
+  overflow: hidden;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.inputRadio {
+  appearance: none;
+  cursor: pointer;
+  width: 10rem;
+  height: 15rem;
+  position: absolute;
+  border-radius: 10px;
+}
+
+.containerBtn {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.btnAtualizar {
+  width: 20rem;
+  background-color: var(--color-text-gray);
+  color: var(--color-text-blue);
+  border: none;
+  border-radius: 10px;
+}
+
+.btnCadastrar {
+  width: 20rem;
+  background-color: var(--color-text-blue);
+  color: var(--color-text-gray);
+  border: none;
+  border-radius: 10px;
+}
+
+.btnExcluir {
+  width: 20rem;
+  background-color: var(--color-button-cancel-secondary);
+  color: var(--color-text-gray);
+  border: none;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 769px) {
+  .wrapLogin {
+    width: 100%;
+  }
+
+  .containerMeusServicos {
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .titleMeusServicos {
+    margin: 0.2rem;
+  }
+
+  .containerBtn {
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .btnAtualizar {
+    width: 100%;
+  }
+
+  .btnCadastrar {
+    width: 100%;
+  }
+
+  .btnExcluir {
+    width: 100%;
+  }
+}
+
+.iconeSearching {
+  width: 30rem;
+  height: 30rem;
+}

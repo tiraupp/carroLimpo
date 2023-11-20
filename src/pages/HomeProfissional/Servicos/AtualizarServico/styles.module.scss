@@ -1,0 +1,103 @@
+.containerMeuCadastro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100%;
+  overflow-x: scroll;
+}
+
+.titleMeusAgendamentos {
+  margin: 1rem;
+  color: var(--color-text-blue);
+}
+
+.formMeuCadastro {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color-text-gray);
+  padding: 1rem 3rem;
+  border-radius: 10px;
+  color: var(--color-text-blue);
+  margin-bottom: 2rem;
+}
+
+.imagemPerfil {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50px;
+}
+
+.botaoEdicao {
+  transform: translate(-45%, 0%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-gray);
+  font-size: 3rem;
+}
+
+.botaoEdicao{
+  font-size: 4rem;
+  color: var(--color-text-blue);
+  text-decoration: none;
+}
+
+.tituloBotaoServico{
+  font-size: 1.5rem;
+  cursor: default;
+}
+
+.modalButtons{
+  margin: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+button{
+  height: 4rem;
+  width: 12rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+} 
+
+.onCancel{
+  background-color: red;
+  color: var(--color-text-blue);
+}
+
+.onConfirm {
+  background-color: var(--color-text-blue);
+  color: var(--color-text-gray);
+
+}
+
+.wrapInput {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 37px;
+}
+
+.selecaoDados{
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 769px) {
+  .formMeuCadastro {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 2rem;
+  }
+}

@@ -28,7 +28,7 @@ export const RegisterProfessional = () => {
     const { confirmarSenha, ...userType } = data;
 
     userType.tipo_perfil = "1";
-
+    
     usuarioRegister(userType);
   };
 
@@ -46,17 +46,14 @@ export const RegisterProfessional = () => {
 
   return (
     <form className={styles.registerForm} onSubmit={handleSubmit(onSubmit)}>
-      <div className={styles.container}>
-        <div className={styles.containerRegister}>
           <div className={styles.wrapRegister}>
-            <div className={styles.editRegister}>
-              <div className={styles.containerLogo}>
+            <div className={styles.containerLogo}>
               <ImgLogo></ImgLogo>
               <span className={styles.registerFormTitle}>
                 Cadastro de Empresa / Lavação!
               </span>
-              </div>
-   
+            </div>
+            <div className={styles.editRegister}>
               <div className={styles.wrapInput}>
                 <Input
                   className={nome !== "" ? `has-val styles.input` : "input"}
@@ -149,7 +146,8 @@ export const RegisterProfessional = () => {
                   />
                 </div>
               )}
-
+              </div>
+              <div className={styles.containerSenhas}>
               <div className={styles.wrapInput}>
                 <Input
                   className={senha !== "" ? `has-val styles.input` : "input"}
@@ -207,8 +205,6 @@ export const RegisterProfessional = () => {
               </p>
             </div>
           </div>
-        </div>
-      </div>
     </form>
   );
 };

@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { HomeAdm } from "../pages/HomeAdm";
 import { HomeClient } from "../pages/HomeClient";
 
-import { HomeProfessional } from "../pages/HomeProfessional";
+import { HomeProfissional } from "../pages/HomeProfissional";
 
 import { Info } from "../pages/Info";
 import { RegisterClient } from "../pages/RegisterClient";
@@ -25,6 +25,16 @@ import { MeusVeiculos } from "../pages/HomeClient/MeuCadastro/CadastroVeiculo/Me
 import { VeiculoNaoCadastrado } from "../pages/HomeClient/MeuCadastro/CadastroVeiculo/VeiculoNaoCadastrado";
 import { MeusAgendamentos } from "../pages/HomeClient/MeusAgendamentos";
 import { Login } from "../pages/Login";
+import { Servicos } from "../pages/HomeProfissional/Servicos";
+import { AgendamentosPJ } from "../pages/HomeProfissional/AgendamentosPJ";
+import { MeuCadastroPJ } from "../pages/HomeProfissional/MeuCadastroPJ";
+import { CadastroPessoalPJ } from "../pages/HomeProfissional/MeuCadastroPJ/CadastroPessoalPJ";
+import { CadastroEnderecoPJ } from "../pages/HomeProfissional/MeuCadastroPJ/CadastroEnderecoPJ";
+import { CadastroSegurancaPJ } from "../pages/HomeProfissional/MeuCadastroPJ/CadastroSegurancaPJ";
+import { MeusServicos } from "../pages/HomeProfissional/Servicos/MeusServicos";
+import { ServicoNaoCadastrado } from "../pages/HomeProfissional/Servicos/ServicoNaoCadastrado";
+import { CadastrarServico } from "../pages/HomeProfissional/Servicos/CadastrarServico";
+import { AtualizarServico } from "../pages/HomeProfissional/Servicos/AtualizarServico";
 
 export const RoutesMain = () => {
   return (
@@ -37,7 +47,23 @@ export const RoutesMain = () => {
 
       <Route element={<ProtectedRoutes />}>
         <Route path="/homeadm" element={<HomeAdm />}></Route>
-        <Route path="/homeprofessional" element={<HomeProfessional />}></Route>
+        <Route path="/homeprofissional/*" element={<HomeProfissional />}>
+          <Route path="servicos" element={<Servicos />} >
+          <Route
+                path="serviconaocadastrado"
+                element={<ServicoNaoCadastrado />}
+              />
+              <Route path="meusservicos" element={<MeusServicos />} />
+              <Route path="cadastrarservico" element={<CadastrarServico />} />
+              <Route path="atualizarservico" element={<AtualizarServico />} />
+          </Route>
+          <Route path="agendamentos" element={<AgendamentosPJ />} />
+          <Route path="meucadastro/*" element={<MeuCadastroPJ />}>
+            <Route path="dadosPessoais" element={<CadastroPessoalPJ />} />
+            <Route path="endereco" element={<CadastroEnderecoPJ />} />
+            <Route path="seguranca" element={<CadastroSegurancaPJ />} />
+          </Route>
+        </Route>
         <Route path="/homeclient/*" element={<HomeClient />}>
           <Route
             path="localizarprofissional"

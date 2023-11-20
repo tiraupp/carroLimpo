@@ -3,7 +3,7 @@ import styles from "./styles.module.scss"
 import { useForm } from 'react-hook-form';
 
 
-export const ModalEditarFoto = ({ isOpen, onClose, onFileUpload }) => {
+export const ModalEditarFoto = ({titulo, isOpen, onClose, onFileUpload }) => {
   if (!isOpen) {
     return null;
   }
@@ -16,7 +16,7 @@ export const ModalEditarFoto = ({ isOpen, onClose, onFileUpload }) => {
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContentFoto}>
-      <h2>Editar Foto do Perfil</h2>
+      <h2>{titulo}</h2>
       <form className={styles.modalContentFoto} onSubmit={handleSubmit(handleFileUpload)}>
         <label htmlFor="arquivo">Escolha uma nova foto:</label>
         <input type="file" id="arquivo" {...register('arquivo')} />

@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
             case 0:
               return location.state?.pathname || "/homeadm";
             case 1:
-              return location.state?.pathname || "/homeprofessional";
+              return location.state?.pathname || "/homeprofissional/agendamentos";
             case 2:
               return location.state?.pathname || "/homeclient/meusagendamentos";
           }
@@ -111,7 +111,7 @@ location.state?.pathname
           case 0:
             return location.state?.pathname || "/homeadm";
           case 1:
-            return location.state?.pathname || "/homeprofessional";
+            return location.state?.pathname || "/homeprofissional/agendamentos";
           case 2:
             return location.state?.pathname || "/homeclient/meusagendamentos";
         }
