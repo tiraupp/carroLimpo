@@ -191,5 +191,17 @@
 @media screen and (max-width: 769px) {
   .wrapLogin {
     width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .containerLoginFormBtn{
+    width: 95%;
+  }
+
+  .link{
+    width: 95%;
+    margin-top: 0.5rem;
   }
 }

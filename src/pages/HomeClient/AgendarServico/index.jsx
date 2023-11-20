@@ -54,6 +54,62 @@ export const AgendarServico = () => {
 
   const buscarAgenda = async (event) => {
     event.preventDefault();
+
+    if (!calendario) {
+      return toast.warning("Selecione uma data", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
+    }
+
+    if (veiculo.length < 1) {
+      toast.warning("Você não possui veículo cadastrado, cadastre um veículo para continuar", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
+      return navigate("/homeclient/meucadastro/veiculos");
+    }
+
+    if (!veiculoSelecionado) {
+      return toast.warning("Selecione um veículo", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
+    }
+
+    if (servico.length < 1) {
+      toast.warning(
+        "Lavação não possui serviços ativo, selecione outra lavação",
+        {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+        }
+      );
+      return navigate("/homeclient/localizarprofissional");
+    }
+
+    if (!servicoSelecionado) {
+      return toast.warning("Selecione um serviço", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
+    }
+
     const horariosAtendimento = [
       "08:00",
       "09:00",
@@ -83,14 +139,24 @@ export const AgendarServico = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = (data) => {
+    if (horarioSelecionado === "") {
+      return toast.warning("Selecione um horário", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
+    }
+
     (data.usuario_id = user.id),
-      (data.veiculo_id = veiculoSelecionado.id),
-      (data.profissional_id = id_profissional),
-      (data.servico_id = servicoSelecionado.id),
-      (data.valor = servicoSelecionado.valor),
-      (data.data_agendamento = calendario),
-      (data.status_id = 2),
-      (data.horario_agendamento = horarioSelecionado.horario);
+    (data.veiculo_id = veiculoSelecionado.id),
+    (data.profissional_id = id_profissional),
+    (data.servico_id = servicoSelecionado.id),
+    (data.valor = servicoSelecionado.valor),
+    (data.data_agendamento = calendario),
+    (data.status_id = 2),
+    (data.horario_agendamento = horarioSelecionado.horario);
     setDadosAgendamento(data);
     setIsModalOpen(true);
   };

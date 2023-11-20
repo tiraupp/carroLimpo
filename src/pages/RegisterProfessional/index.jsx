@@ -50,10 +50,13 @@ export const RegisterProfessional = () => {
         <div className={styles.containerRegister}>
           <div className={styles.wrapRegister}>
             <div className={styles.editRegister}>
+              <div className={styles.containerLogo}>
               <ImgLogo></ImgLogo>
               <span className={styles.registerFormTitle}>
                 Cadastro de Empresa / Lavação!
               </span>
+              </div>
+   
               <div className={styles.wrapInput}>
                 <Input
                   className={nome !== "" ? `has-val styles.input` : "input"}

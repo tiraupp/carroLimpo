@@ -26,6 +26,15 @@ export const LocalizarProfissional = () => {
   } = useForm();
 
   const loadDados = async () => {
+    if(!user.endereco.cidade){
+      toast.info("Você não possui endereço cadastrado, cadastre um endereço para uma melhor experiência", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
+    }
     try {
       const cidade = user.endereco[0].cidade;
       const responseProfissional = await api.get(
@@ -38,15 +47,29 @@ export const LocalizarProfissional = () => {
   };
 
   const loadProfissionais = async (data) => {
+    if(!localizarProfissional && !cidade){
+      return toast.warn("Informe nome do profissional/empresa ou a ciadde", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
+    }
     const filtro = data.localizarProfissional !== "" ? "nome" : "cidade";
     const query =
       data.localizarProfissional !== "" ? localizarProfissional : cidade;
     try {
-      console.log(data);
-
       const response = await api.get(`/profissional/listar?${filtro}=${query}`);
-
       setProfissional(response.data);
+      if(response.data.length < 1)
+      return toast.error("Nenhum profissional/empresa encontrada", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      });
     } catch (error) {
       toast.error(error.response.data.mensagem, { autoClose: 2000 });
     }
@@ -101,7 +124,7 @@ export const LocalizarProfissional = () => {
                 dataPlaceholder={
                   localizarProfissional !== ""
                     ? "Profissional"
-                    : "Digite o nome do profissional"
+                    : "Digite o nome do profissional/empresa"
                 }
                 clearErrors={clearErrors}
               />

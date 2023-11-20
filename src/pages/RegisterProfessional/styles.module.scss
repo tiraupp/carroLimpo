@@ -214,13 +214,25 @@ select {
 
 @media screen and (max-width: 769px) {
   .wrapRegister {
-    width: 100%;
+    width: 95%;
+
   }
   .editRegister {
     display: flex;
     flex-direction: column;
   }
+
+  .containerLogo{
+display: flex;
+flex-direction: column;
+align-items: center;
+  }
+
   .interationForm {
     width: 100%;
+  }
+
+  .registrationType{
+    align-items: flex-start;
   }
 }
