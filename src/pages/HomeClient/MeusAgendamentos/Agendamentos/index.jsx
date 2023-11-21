@@ -2,10 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../../providers/AuthProvider";
 
 import { toast } from "react-toastify";
+import searchBro from "../../../../../src/assets/search-bro.svg";
 import { Modal } from "../../../../modal/Modal";
 import { api } from "../../../../services/api";
 import styles from "./styles.module.scss";
-import searchBro from "../../../../../src/assets/search-bro.svg";
 
 export const Agendamentos = ({ opcaoAgendamento }) => {
   const { user } = useContext(AuthContext);
@@ -36,7 +36,7 @@ export const Agendamentos = ({ opcaoAgendamento }) => {
           );
           break;
         default:
-          setAgendamento(response.data)
+          setAgendamento(response.data);
           break;
       }
     } catch (error) {
@@ -69,9 +69,7 @@ export const Agendamentos = ({ opcaoAgendamento }) => {
 
   const handleConfirm = async () => {
     try {
-      await api.patch(
-        `/agendamento/usuario/cancelar/${dadosAgendamento.id}`
-      );
+      await api.patch(`/agendamento/usuario/cancelar/${dadosAgendamento.id}`);
       loadDados();
       toast.success("Agendamento cancelado com sucesso", {
         position: "top-right",
@@ -103,72 +101,72 @@ export const Agendamentos = ({ opcaoAgendamento }) => {
         Meus Agendamentos: {opcaoAgendamento}
       </h2>
 
-      {agendamento.length < 1 ? 
-      <div>
-      <img
-        className={styles.imgSearch}
-        src={searchBro}
-        alt="Icone nenhum veiculo cadastrado"
-      />
-      <p className={styles.mensagem}>
-        Você ainda não possui agendamentos {opcaoAgendamento}.
-      </p>
-    </div>
-:
-    
-      <div className={styles.meusAgendamentos}>
-        {agendamento.map(
-          ({
-            id,
-            data_agendamento,
-            horario_agendamento,
-            valor,
-            nome_servico,
-            nome_profissional,
-            modelo,
-            placa,
-            descricao,
-          }) => (
-            <div key={id} className={styles.containerCardAgendamento}>
-              <div className={styles.cardAgendamento} value={id}>
-                <h3>
-                  {nome_servico} R$ {(valor / 100).toFixed(2).replace(".", ",")}
-                </h3>
-                <p>
-                  Profissional: <span>{nome_profissional}</span>
-                </p>
-                <p>
-                  Horário: {formatarData(data_agendamento)} -{" "}
-                  {horario_agendamento}
-                </p>
+      {agendamento.length < 1 ? (
+        <div>
+          <img
+            className={styles.imgSearch}
+            src={searchBro}
+            alt="Icone nenhum veiculo cadastrado"
+          />
+          <p className={styles.mensagem}>
+            Você ainda não possui agendamentos {opcaoAgendamento}.
+          </p>
+        </div>
+      ) : (
+        <div className={styles.meusAgendamentos}>
+          {agendamento.map(
+            ({
+              id,
+              data_agendamento,
+              horario_agendamento,
+              valor,
+              nome_servico,
+              nome_profissional,
+              modelo,
+              placa,
+              descricao,
+            }) => (
+              <div key={id} className={styles.containerCardAgendamento}>
+                <div className={styles.cardAgendamento} value={id}>
+                  <h3>
+                    {nome_servico} R${" "}
+                    {(valor / 100).toFixed(2).replace(".", ",")}
+                  </h3>
+                  <p>
+                    Profissional: <span>{nome_profissional}</span>
+                  </p>
+                  <p>
+                    Horário: {formatarData(data_agendamento)} -{" "}
+                    {horario_agendamento}
+                  </p>
+                </div>
+                {descricao === "Agendado" || descricao === "Em Andamento" ? (
+                  <button
+                    className={styles.btnAgendamento}
+                    onClick={(e) => {
+                      const dadosCardAgendamento = {
+                        id,
+                        data_agendamento,
+                        horario_agendamento,
+                        valor,
+                        nome_servico,
+                        nome_profissional,
+                        modelo,
+                        placa,
+                      };
+                      handleOpenModal(e, dadosCardAgendamento);
+                    }}
+                  >
+                    Cancelar
+                  </button>
+                ) : (
+                  <span>Serviço: {descricao}</span>
+                )}
               </div>
-              {descricao === "Agendado" || descricao === "Em Andamento" ? (
-                <button
-                  className={styles.btnAgendamento}
-                  onClick={(e) => {
-                    const dadosCardAgendamento = {
-                      id,
-                      data_agendamento,
-                      horario_agendamento,
-                      valor,
-                      nome_servico,
-                      nome_profissional,
-                      modelo,
-                      placa,
-                    };
-                    handleOpenModal(e, dadosCardAgendamento);
-                  }}
-                >
-                  Cancelar
-                </button>
-              ) : (
-                <span></span>
-              )}
-            </div>
-          )
-        )}
-      </div>
-}
+            )
+          )}
+        </div>
+      )}
       <Modal
         isOpen={isModalOpen}
         message={{
