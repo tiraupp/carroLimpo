@@ -10,13 +10,14 @@ export const RegisterProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const usuarioRegister = async (data) => {
+    console.log(data);
     try {
       const response =
         data.tipo_perfil === 2
           ? await api.post("/usuario", data)
           : await api.post("/profissional/cadastro", data);
       toast.success(
-        `${response.data.nome}, seu cadastro foi efetuado com sucesso!`,
+        `${data.nome}, seu cadastro foi efetuado com sucesso!`,
         {
           position: "top-right",
           autoClose: 3000,
